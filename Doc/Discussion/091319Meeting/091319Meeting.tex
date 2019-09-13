@@ -1,0 +1,111 @@
+% acex13.tex/06/24/2013\documentclass[mathserif]{beamer}%
+\documentclass{beamer}
+\usepackage{amsxtra,amssymb,amsthm,amsmath,latexsym}
+\usepackage{multicol}
+\usepackage{beamerthemesplit}
+%\usetheme{Darmstadt}
+\numberwithin{equation}{section}
+\newtheorem{thm}{Theorem}[]
+\newcommand{\EN}{\mathcal{N}}
+\newcommand{\na}{\nabla}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\ue}{\infty}
+\newcommand{\nc}{\newcommand}
+\newcommand{\RRR}{\mathbb{R}^3}
+\newcommand{\ol}{\overline}
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\xy}{\boldsymbol{x}}
+\newcommand{\uv}{\boldsymbol{u}}
+\newcommand{\conv}{\circledast}
+\newcommand{\llangle}{\left\langle}
+\newcommand{\rrangle}{\right\rangle}
+\def\bee{\begin{equation*}}
+\def\eee{\end{equation*}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\nc{\Ba}{\Big(} \nc{\Bz}{\Big)} \nc{\pa}{\partial} \nc{\ti}{\times}
+\nc{\n}{|} \nc{\al}{\alpha} \nc{\da}{\delta} \nc{\bs}{\backslash}
+\nc{\ka}{\kappa} \nc{\Da}{\Delta} \nc{\si}{\sigma} \nc{\f}{\big(}
+\nc{\g}{\big)}
+%\nc{\n}{|}
+\nc{\om}{\omega}
+\begin{document}
+%%%% Test - Einsatz  Kapitel 5 -
+\part{ }
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\title[CIRL Discusson]{9/13/19 Discussion}
+\institute{}
+\date{}
+\frame{\titlepage}
+\section{Recap}
+\frame{
+\begin{itemize}
+\item[1.] We can run the model-based methods for the 3W system, using the on-the-fly up-sampling and computation of the patterns, without using the GPU. It takes about 1 and a half day for 200 iterations for the model-based method and about 3 days for 200 iterations for the model-based method with positivity constraint. Using GPU is not stable and so not suggested at this time.
+\item[2.] New multi-object.
+\item[3.] Parameters and PSF for FairSIM data.
+\end{itemize}
+}
+
+\section{Fall 2019 plan}
+\frame{
+First task: investigate 3D-SIM data/restoration with simulated noise and noisy parameters, on a simulated bead; learn how to divide a task into smaller sub-tasks.
+\begin{table}[First task]
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+      &  Cong             & Saba 				 \\
+\hline
+ 9/13 &                   & Forward model 		 \\
+ 9/20 &                   & Down-sampling 		 \\
+ 9/27 & Conf. paper draft & MB reconstruction 	 \\
+10/04 &        			  & Draft report 		 \\
+10/11 & Conf. paper 	  & Noisy data           \\
+10/18 &                   & \textbf{First report} - Noisy parameter      \\
+10/25 &            		  & Noisy reconstruction \\
+11/01 & FairSIM           & Analysis/Recap       \\
+\hline
+\end{tabular}
+\end{table}
+}
+
+\frame{
+Second task: investigate 3D-SIM data/restoration with noisy PSF (both simulated and experimental), on a more challenging simulated object. Saba will come up with sub-tasks.
+\begin{table}[Second task]
+\begin{tabular}{l|l|l|}
+\cline{2-3}
+      &  Cong               & Saba 				 \\
+\hline
+11/08 &                     & 					 \\
+11/15 & AD/different Nslits & Noisy multi-object \\
+11/22 & 				    &   				 \\
+11/29 &        			    & (thanksgiving)	 \\
+12/06 & AD results   	    & \textbf{Final report}       \\
+\hline
+\end{tabular}
+\end{table}
+}
+
+\section{Next tasks}
+\frame{
+\begin{itemize}
+\item[1.] Write the draft sections 2 (MBPC method), 4 (analysis of simulated results) of the ISBI paper.
+\item[2.] Running the following experiments for the refined multi-object with refined axial frequency, for the 3W system, for both MB and MBPC methods:
+\begin{table}[]
+\begin{tabular}{c|cc}
+      & Noiseless  & SNR = 15 dB \\ \hline
+15/15 & 200 iter   & 200 iter    \\
+ 7/15 & 400 iter   & 400 iter    \\
+ 5/15 & 400 iter   & 400 iter    \\
+\end{tabular}
+\end{table}
+\item[3.] FairSIM PSF and trying to get reconstruction for FairSIM data.
+\end{itemize}
+}
+
+%% #
+%\frame[shrink=30]{\frametitle{Test}
+%Test
+%}
+
+\end{document}

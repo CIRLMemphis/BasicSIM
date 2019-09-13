@@ -2,7 +2,7 @@ clear;
 clc;
 
 % folder containing the experimental .mat data
-CIRLDataPath = "C:\Users\saba\OneDrive - The University of Memphis\BasicSIMData";
+CIRLDataPath = "C:\Users\cvan\OneDrive - The University of Memphis\CIRLData";
 
 % folder containing the source code
 CIRLSrcPath  = "C:\Users\cvan\OneDrive - The University of Memphis\BasicSIM";
