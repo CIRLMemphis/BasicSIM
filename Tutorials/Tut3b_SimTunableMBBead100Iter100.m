@@ -1,3 +1,4 @@
+run("../CIRLSetup.m")
 run("SimTunableBead100Setup.m");
 matFile = CIRLDataPath + "/Simulation/Tunable/SimTunableBead100.mat";
 
