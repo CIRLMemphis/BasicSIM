@@ -1,7 +1,7 @@
 run("../CIRLSetup.m")
 run("SimTunableBead100Setup.m");
 matFile = CIRLDataPath + "/Simulation/Tunable/SimTunableBead100.mat";
-load(CIRLDataPath + "/Results/201909221839_SimTunableMBBead100Iter100/201909221839_SimTunableMBBead100Iter100.mat", 'retVars');
+load(CIRLDataPath + "/Results/201909222309_SimTunableGWFBead/201909222309_SimTunableGWFBead.mat", 'retVars');
 initGuess = retVars{7};
 
 %% run RunReconstruction
