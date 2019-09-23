@@ -10,6 +10,6 @@ module purge
 module load matlab
 
 # run matlab program via the run_matlab script
-logFile=Tut3b_SimTunableMBBead100Iter100.log
-mFile=Tut3b_SimTunableMBBead100Iter100.m
+logFile=TestSimTunableMBBead100Iter200Cont.log
+mFile=TestSimTunableMBBead100Iter200Cont.m
 /public/apps/matlab/R2018a/bin/matlab -nodisplay -nosplash -nodesktop -logfile $logFile -r "run $mFile;quit;"
