@@ -1,11 +1,11 @@
-function [ f ] = MultiObjectXYZ( X, Z, dXY, dZ)
+function [ f ] = OSSRMultiObject( X, Z, dXY, dZ)
 
 % OneBead
 Radius    = 3/2;      % radius of bead in microns
 Thickness = 0.4/2;      % shell thickness of bead in microns
 f1 = bead(dXY, dZ, X, Z, Radius, Thickness);
-Fil_size = 2+1;
-sd = 2;
+Fil_size = 30+1;
+sd = 5;
 f1 = smooth3(f1, 'gaussian',Fil_size,sd);
 f1 = f1./max(f1(:));
 
@@ -32,11 +32,23 @@ f1 = f1./max(f1(:));
 %r = 50 nm, dis = 111 or 222 nm -->FilSize = 4+1 and sd = 2
 Radius   = 0.0750;%( 0.2/dXY - 0)*dXY/2;   % radius of bead in microns
 Distance = 2*Radius + 0.200;                  % shell thickness of bead in microns
-f2 = pointsXYZ(X, Z, dXY, dZ, Radius, Distance);
-Fil_size = 2+1;
-sd = 1;
+f2 = pointsXY(X, Z, dXY, dZ, Radius, Distance);
+Fil_size = 8+1;
+sd = 1.5;
 f2 = smooth3(f2, 'gaussian',Fil_size,sd);
 %f2 = 1.04.*f2./max(f2(:));%1.9
 f2 = 1*f2./max(f2(:));%1.9
 
-f = f1 + f2;
+RadiusZ      = 0.115;
+DistanceXY   = 0.260;
+DistanceZTop = 0.460;
+DistanceZBot = 0.340;
+f3 = pointsXZ(X, Z, dXY, dZ, RadiusZ, DistanceXY, DistanceZTop, DistanceZBot);
+Fil_size = 8+1;
+sd = 1.5;
+f3 = smooth3(f3, 'gaussian',Fil_size,sd);
+%f2 = 1.04.*f2./max(f2(:));%1.9
+f3 = 1*f3./max(f3(:));%1.9
+
+f = f1 + f2 + f3;
+f = f./max(f(:));
